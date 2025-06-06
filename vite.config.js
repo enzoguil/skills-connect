@@ -4,7 +4,7 @@ import path from 'node:path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/skills-connect/',
+  base: '/skillsconnect/',
   plugins: [react()],
   resolve: {
     alias: {
