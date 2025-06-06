@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import etudiantsImg from '../assets/etudiants landing page.png';
+import profilsImg from '../assets/3 profils landing page.png';
+import profilLikeImg from '../assets/profil like landing page.png';
 
 const Home = () => {
     return (
@@ -11,13 +14,13 @@ const Home = () => {
                             <p>Ici, chaque profil est une opportunité. Parcourez les compétences de vos camarades de campus, découvrez des parcours variés, échangez avec des étudiants passionnés, et trouvez en quelques clics les partenaires idéaux pour vos projets scolaires ou personnels !</p>
                             <p>Que vous ayez besoin d’un développeur, d’un graphiste, d’un communicant ou d’un stratège, Skills Connect vous met en relation rapidement, simplement, et avec des personnes motivées.</p>
                         </div>
-                        <img className="col-4" src="/assets/etudiants landing page.png" style={{ width: "40%", height: "20%" }}/>
+                        <img className="col-4" src={etudiantsImg} style={{ width: "40%", height: "20%" }} alt="Étudiants" />
                     </div>
                 </section>
 
                 <section id="skills" className="container my-5">
                     <div className="row">
-                        <img className="col-4" src="/assets/3 profils landing page.png" style={{ width: "40%", height: "20%" }}/>
+                        <img className="col-4" src={profilsImg} style={{ width: "40%", height: "20%" }} alt="Profils" />
                         <div className="col-6">
                             <h2>Découvrez les talents de votre campus</h2>
                             <p>Et si la personne qu’il manquait à votre projet était juste à côté de vous ?</p>
@@ -38,7 +41,7 @@ const Home = () => {
         </div>
         <img
             className="col-4"
-            src="/assets/profil like landing page.png"
+            src={profilLikeImg}
             style={{
                 width: "35%",
                 minWidth: 220,
