@@ -15,7 +15,7 @@ export default defineConfig({
     port: 8080,
     hot: true,
     proxy: {
-      'api/': 'http://localhost:3000',
+      'api/': '45.140.164.244:25644',
     },
   },
 }); 
