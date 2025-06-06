@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import etudiantsImg from '../assets/etudiants landing page.png';
-import profilsImg from '../assets/3 profils landing page.png';
-import profilLikeImg from '../assets/profil like landing page.png';
+import etudiantsImg from '../../public/assets/etudiants landing page.png';
+import profilsImg from '../../public/assets/3 profils landing page.png';
+import profilLikeImg from '../../public/assets/profil like landing page.png';
 
 const Home = () => {
     return (
