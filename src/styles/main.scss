@@ -1,0 +1,261 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+//import de la font Montserrat
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+//import de la font Bebas Neue
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+//definir comme police par défaut pour le texte
+body, header, footer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  h2 {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+
+//definir comme police par défaut pour les titres
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+}
+
+.red-text {
+  color: #D8555B;
+}
+
+.blue-text {
+  color: #30325B;
+}
+
+.button-green {
+  background-color: #5AB2A6;
+}
+
+.border-green-bottom {
+  border-bottom: 2px solid #5AB2A6;
+}
+
+
+.profil-card {
+  background: #fff;
+  border-radius: 32px;
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  min-width: 350px;
+  max-width: 370px;
+  min-height: 420px;
+  box-shadow: 0 6px 24px 0 rgba(44, 44, 44, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swipe-card {
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1), background 0.4s;
+  background: linear-gradient(135deg, #fff 60%, #ffe3e3 100%);
+  border-radius: 32px;
+  overflow: visible;
+  z-index: 1;
+}
+
+.swipe-avatar-wrapper {
+  width: 110px;
+  height: 110px;
+  margin-top: -60px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swipe-avatar,
+.initials-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e0e0e0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2d2d4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.swipe-name {
+  font-weight: 700;
+  color: #2d2d4a;
+  font-size: 1.45rem;
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.swipe-tags {
+  gap: 0.5rem;
+  margin-bottom: 1.2rem !important;
+}
+
+.swipe-badge {
+  background: #ff4f7a;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  padding: 0.35em 1em;
+}
+
+.swipe-rating {
+  justify-content: center;
+  margin-bottom: 0.7rem !important;
+}
+
+.swipe-dot {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.swipe-score {
+  color: #2d2d4a;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.swipe-reviews-link {
+  color: #bdbdbd;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.swipe-arrows {
+  margin-top: 2.5rem;
+}
+
+.swipe-arrow-btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.15s;
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.swipe-arrow-left img {
+  width: 60px;
+  filter: hue-rotate(-20deg) saturate(2) brightness(1.1);
+}
+
+.swipe-arrow-right img {
+  width: 60px;
+  filter: hue-rotate(120deg) saturate(2) brightness(1.1);
+}
+
+.swipe-card-left {
+  transform: rotate(-13deg) translateX(-60px) scale(1.03);
+  background: linear-gradient(135deg, #fff 60%, #ffe3e3 100%);
+}
+.swipe-card-right {
+  transform: rotate(13deg) translateX(60px) scale(1.03);
+  background: linear-gradient(135deg, #fff 60%, #e0f7f7 100%);
+}
+.swipe-arrows svg {
+  transition: filter 0.3s, opacity 0.3s;
+}
+.swipe-arrows svg:first-child {
+  /* Flèche gauche */
+  filter: none;
+  opacity: 1;
+}
+.swipe-arrows svg:last-child {
+  /* Flèche droite */
+  filter: none;
+  opacity: 1;
+}
+.swipe-arrows .swipe-card-left + svg,
+.swipe-arrows svg:first-child[fill="#FF4F7A"] {
+  /* Accentue la flèche gauche si swipe gauche */
+  filter: drop-shadow(0 0 6px #ff4f7a55);
+}
+.swipe-arrows .swipe-card-right + svg,
+.swipe-arrows svg:last-child[fill="#00BFAE"] {
+  /* Accentue la flèche droite si swipe droite */
+  filter: drop-shadow(0 0 6px #00bfae55);
+}
+
+.swipe-card-left::after,
+.swipe-card-right::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+  width: 100%;
+  height: 150px;
+  border-radius: 0 0 80px 80px;
+  filter: blur(32px);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.swipe-card-left::after {
+  background: #FF4F7A;
+  background: linear-gradient(0deg,rgba(255, 79, 122, 0.76) 38%, rgba(255, 79, 122, 0.04) 100%);
+  opacity: 0.5;
+}
+
+.swipe-card-right::after {
+  background: #00BFAE;
+  background: linear-gradient(0deg,rgba(0, 191, 174, 0.76) 38%, rgba(0, 191, 174, 0.04) 100%);
+  opacity: 0.5;
+}
+
+.sidebar {
+  position: fixed;
+  top: 26vh;
+  padding-left: 5vw;
+  left: -2vw;
+  width: 64px;
+  height: 48vh;
+  background: #D8555B;
+  border-radius: 0 16px 16px 0;
+  z-index: 100;
+  box-shadow: 0 0 24px 0 rgba(44,44,44,0.08);
+
+  .sidebar-logo img {
+    display: block;
+    margin: 0 auto;
+  }
+  .nav-link {
+    padding: 0.5rem 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.active,
+    &:hover {
+      box-shadow: 0 2px 8px #ff4f7a22;
+    }
+    img {
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

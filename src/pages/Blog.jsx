@@ -1,0 +1,47 @@
+import React from 'react';
+import { getListBlog } from '../services/api';
+
+import { useEffect, useState } from "react";
+
+import { Link, useParams } from "react-router-dom";
+import ArticlePreview from '../components/ArticlePreview';
+
+const Blog = () => {
+    const [articles, setArticles] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const { id } = useParams();
+    
+    useEffect(() => {
+        fetchArticles();
+    }, []);
+    
+    const fetchArticles = async () => {
+    
+        try {
+            setIsLoading(true);
+            console.log(id);
+            const data = await getListBlog();
+            console.log(data);
+            setArticles(data.articles);
+        } catch (error) {
+            console.error('Failed to fetch articles:', error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    return (
+        <div className="container py-5">
+            <h2 className="fw-bold mb-4">
+                Découvrez tous nos conseils ici !
+            </h2>
+            <div className="row g-5">
+                <ArticlePreview title="Pourquoi rejoindre MyDigitalSchool Vannes ?" image_url="assets/photo mydi vannes.png" />
+                <ArticlePreview title="Pourquoi rejoindre MyDigitalSchool Vannes ?" image_url="assets/photo mydi vannes.png" />
+                <ArticlePreview title="Pourquoi rejoindre MyDigitalSchool Vannes ?" image_url="assets/photo mydi vannes.png" />
+            </div>
+        </div>
+    );
+};
+
+export default Blog;
