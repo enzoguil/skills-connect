@@ -42,12 +42,14 @@ jobs:
           npm run build
           touch dist/.nojekyll
 
-      - name: Deploy to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: dist/
-          server-dir: /
+      
+      - name: Install Ansible
+        run: sudo apt-get update && sudo apt-get install -y ansible rsync sshpass
+
+      - name: Déployer sur le VPS avec Ansible
+        env:
+          ANSIBLE_HOST_KEY_CHECKING: 'False'
+        run: |
+          echo "[vps]
+          ${{ secrets.VPS_HOST }} ansible_user=${{ secrets.VPS_USER }} ansible_ssh_pass=${{ secrets.VPS_PASS }}" > hosts
+          ansible-playbook -i hosts .github/workflows/deploy.yml
