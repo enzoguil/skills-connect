@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://rubiscraft.fr/api-mds/api/';
+const API_BASE_URL = 'https://rubiscraft.fr/api-mds/api';
 const token = localStorage.getItem("token");
 
 export const getUser = async (id) => {
