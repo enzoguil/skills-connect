@@ -23,7 +23,7 @@ const Navbar = () => {
     user = JSON.parse(user);
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand col-2 me-5"><img src="/assets/logo_principal.png" style={{ width: "90%" }}/></a>
+            <a className="navbar-brand col-2 me-5"><img src={logoPrincipal} style={{ width: "90%" }}/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
