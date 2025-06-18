@@ -17,7 +17,7 @@ const Login = () => {
             if (response) {
                 localStorage.setItem("token", response.token)
                 localStorage.setItem("user", JSON.stringify(response.user));
-                window.location.href = "/compte/"+response.user.id;
+                window.location.href = './discover';
             }
         } catch (error) {
             console.log("Erreur lors de la connexion :", error);

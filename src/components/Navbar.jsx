@@ -11,7 +11,7 @@ const Navbar = () => {
                     <div className="row justify-content-between">
                         <a className="navbar-brand col-4"><img src="/assets/logo_principal.png" style={{ width: "40%" }}/></a>
                         <form class="col-4" role="search">
-                            <button className="btn btn-light"><Link className="btn btn-light nav-link" aria-current="page" href="#">Se connecter</Link></button>
+                            <button className="btn btn-light"><Link className="btn btn-light nav-link" aria-current="page" to="/login">Se connecter</Link></button>
                             <button className="btn btn-danger"><Link className="nav-link text-white" to="/sign-up">S'inscrire</Link></button>
                         </form>
                     </div>
