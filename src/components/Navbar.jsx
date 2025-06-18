@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoPrincipal from '../../public/assets/logo_principal.png';
 
 const Navbar = () => {
     let user = localStorage.getItem("user");
@@ -9,7 +10,7 @@ const Navbar = () => {
             <nav className="ms-5 me-5 navbar border-bottom border-gray">
                 <div className="container">
                     <div className="row justify-content-between">
-                        <a className="navbar-brand col-4"><img src="/assets/logo_principal.png" style={{ width: "40%" }}/></a>
+                        <a className="navbar-brand col-4"><img src={logoPrincipal} style={{ width: "40%" }}/></a>
                         <form class="col-4" role="search">
                             <button className="btn btn-light"><Link className="btn btn-light nav-link" aria-current="page" to="/login">Se connecter</Link></button>
                             <button className="btn btn-danger"><Link className="nav-link text-white" to="/sign-up">S'inscrire</Link></button>

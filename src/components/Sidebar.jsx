@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom";
+import iconeAccueil from '../../public/assets/icone accueil.png';
+import iconeDecouverte from '../../public/assets/icone_decouverte.png';
+import iconeSwipe from '../../public/assets/icone swipe.png';
+import iconeAnnonces from '../../public/assets/icone annonce.png';
+import iconeBlog from '../../public/assets/icone blog.png';
+import iconeFAQ from '../../public/assets/icone faq.png';
 
 const Sidebar = () => {
     let user = localStorage.getItem("user");
@@ -13,22 +19,22 @@ const Sidebar = () => {
     return (
         <nav class="sidebar d-flex flex-column align-items-center py-4">
             <Link className="nav-link me-5" to="/">
-                <img src="/assets/icone accueil.png" alt="Logo" />
+                <img src={iconeAccueil} alt="Logo" />
             </Link>
             <Link className="nav-link me-5" to="/discover">
-                <img src="/assets/icone decouverte.png" alt="Logo" width="32" height="32" />
+                <img src={iconeDecouverte} alt="Logo" width="32" height="32" />
             </Link>
             <Link className="nav-link me-5" to="/swipe">
-                <img src="/assets/icone swipe.png" alt="Logo" width="32" height="32" />
+                <img src={iconeSwipe} alt="Logo" width="32" height="32" />
             </Link>
             <Link className="nav-link me-5" to="/">
-                <img src="/assets/icon annonce.png" alt="Logo" width="32" height="32" />
+                <img src={iconeAnnonces} alt="Logo" width="32" height="32" />
             </Link>
             <Link className="nav-link me-5" to="/blog">
-                <img src="/assets/icon blog.png" alt="Logo" width="32" height="32" />
+                <img src={iconeBlog} alt="Logo" width="32" height="32" />
             </Link>
             <Link className="nav-link me-5" to="/faq">
-                <img src="/assets/icone faq.png" alt="Logo" width="32" height="32" />
+                <img src={iconeFAQ} alt="Logo" width="32" height="32" />
             </Link>
         </nav>
     );
