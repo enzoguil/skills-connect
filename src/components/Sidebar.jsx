@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import iconeAccueil from '../../public/assets/icone accueil.png';
+import iconeAccueil from '../../public/assets/icone_accueil.png';
 import iconeDecouverte from '../../public/assets/icone_decouverte.png';
-import iconeSwipe from '../../public/assets/icone swipe.png';
-import iconeAnnonces from '../../public/assets/icone annonce.png';
-import iconeBlog from '../../public/assets/icone blog.png';
-import iconeFAQ from '../../public/assets/icone faq.png';
+import iconeSwipe from '../../public/assets/icone_swipe.png';
+import iconeAnnonces from '../../public/assets/icone_annonce.png';
+import iconeBlog from '../../public/assets/icone_blog.png';
+import iconeFAQ from '../../public/assets/icone_faq.png';
 
 const Sidebar = () => {
     let user = localStorage.getItem("user");
