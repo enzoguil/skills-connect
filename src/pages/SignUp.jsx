@@ -1,6 +1,9 @@
 import { useNavigate, Link } from "react-router-dom";
 import React, { useState  } from "react";
 import { createUser } from "../services/api";
+import loupeVerte from '../../public/assets/loupe-verte.png';
+import mainsOranges from '../../public/assets/mains-oranges.png';
+import fuseeRose from '../../public/assets/fusee-rose.png';
 
 const SignUp = () => {
     const [error, setError] = useState(null);
@@ -47,15 +50,15 @@ const SignUp = () => {
                     <button className="btn btn-danger pe-4 ps-4"><Link to="/sign-up" className="text-white text-decoration-none">Se connecter</Link></button>
                     <div className="row mt-5">
                         <div className="col">
-                            <img src="/assets/loupe-verte.png" alt="skills" className="img-fluid rounded mx-auto d-block mb-2" style={{ width: "30%" }}/>
+                            <img src={loupeVerte} alt="skills" className="img-fluid rounded mx-auto d-block mb-2" style={{ width: "30%" }}/>
                             <p className="text-center"><strong>Recherchez des compétences</strong></p>
                         </div>
                         <div className="col mt-n5">
-                            <img src="/assets/mains-oranges.png" alt="skills" className="img-fluid rounded mx-auto d-block mb-2" style={{ width: "35%" }}/>
+                            <img src={mainsOranges} alt="skills" className="img-fluid rounded mx-auto d-block mb-2" style={{ width: "35%" }}/>
                             <p className="text-center"><strong>Créez des connexions</strong></p>
                         </div>
                         <div className="col">
-                            <img src="/assets/fusee-rose.png" alt="skills" className="img-fluid rounded mx-auto d-block mb-2" style={{ width: "30%" }}/>
+                            <img src={fuseeRose} alt="skills" className="img-fluid rounded mx-auto d-block mb-2" style={{ width: "30%" }}/>
                             <p className="text-center"><strong>Menez à bien vos projets</strong></p>
                         </div>
                     </div>
