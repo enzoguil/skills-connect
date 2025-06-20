@@ -6,7 +6,7 @@ const AvisList = ({ avis, onClose }) => (
       <h3>Liste des avis</h3>
       <ul>
         {avis.array.forEach(element => {
-            <li key={i}>{a}</li>
+            <li key={element.user}>{element.avis}</li>
         })}
       </ul>
       <button onClick={onClose}>Fermer</button>
