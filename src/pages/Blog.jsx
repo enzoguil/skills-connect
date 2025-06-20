@@ -19,9 +19,7 @@ const Blog = () => {
     
         try {
             setIsLoading(true);
-            console.log(id);
             const data = await getListBlog();
-            console.log(data);
             setArticles(data.articles);
         } catch (error) {
             console.error('Failed to fetch articles:', error);

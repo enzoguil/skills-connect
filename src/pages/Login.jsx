@@ -20,7 +20,6 @@ const Login = () => {
                 window.location.href = './discover';
             }
         } catch (error) {
-            console.log("Erreur lors de la connexion :", error);
             setError("Identifiants incorrects.");
         }
     };

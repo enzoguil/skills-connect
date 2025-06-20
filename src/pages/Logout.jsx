@@ -7,15 +7,6 @@ const Logout = () => {
 
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    // const redirect = async (element) => {
-    
-    //         try {
-    //             navigate("/");
-    //         } catch (error) {
-    //             setError("Identifiants incorrects.");
-    //         }
-    //     };
-    // redirect();
     window.location.href = "/";
 };
 

@@ -19,7 +19,6 @@ const Account = () => {
         try {
             setIsLoading(true);
             const data = await fetchCategories(id);
-            console.log("Categories:", data);
             setCategories(data);
         } catch (error) {
             console.error('Failed to fetch categories:', error);
@@ -34,7 +33,6 @@ const Account = () => {
             const data = await getUser(id);
             setUser(data);
             setTags(data.skills || []);
-            console.log("User fetched:", data);
         } catch (error) {
             console.error('Failed to fetch user:', error);
         } finally {
@@ -47,9 +45,6 @@ const Account = () => {
     const handleRemoveTag = (tagToRemove) => {
         setTags(tags.filter((tag) => tag !== tagToRemove));
         removeCategoryFromUser(id, tagToRemove)
-            .then(() => {
-                console.log(`Catégorie ${tagToRemove} supprimée de l'utilisateur ${id}`);
-            })
             .catch((error) => {
                 console.error(`Erreur lors de la suppression de la catégorie ${tagToRemove} :`, error);
             });
@@ -61,16 +56,11 @@ const Account = () => {
             setTags([...tags, selectedTag]);
             setSelectedTag("");
             addCategoryToUser(id, selectedTag)
-                .then(() => {
-                    console.log(`Catégorie ${selectedTag} ajoutée à l'utilisateur ${id}`);
-                })
                 .catch((error) => {
                     console.error(`Erreur lors de l'ajout de la catégorie ${selectedTag} :`, error);
                 });
         }
     };
-
-    console.log("Tags:", tags);
 
     // On filtre les catégories dont le nom n'est pas déjà dans tags
     const availableCategories = categories.filter(cat => !tags.includes(cat.name));

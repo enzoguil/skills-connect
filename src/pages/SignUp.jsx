@@ -21,19 +21,15 @@ const SignUp = () => {
         element.preventDefault();
         if(formData.password !== formData.confirm_password) {
             setError("Les mots de passe ne correspondent pas.");
-            console.log("Les mots de passe ne correspondent pas.");
             return;
         }
 
         try {
-            console.log(formData);
-            console.log("Création de l'utilisateur : ", formData.firstName, formData.lastName, formData.email, formData.password);
             const response = await createUser(formData.firstName, formData.lastName, formData.email, formData.password);
 
             if (response) {
                 localStorage.setItem("token", response.token)
                 localStorage.setItem("user", JSON.stringify(response.user));
-                console.log(response.user);
                 window.location.href = "./#/compte/"+response.user.id;
             }
         } catch (error) {

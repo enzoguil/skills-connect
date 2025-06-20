@@ -8,7 +8,6 @@ import iconeFAQ from '../../public/assets/icone_faq.png';
 
 const Sidebar = () => {
     let user = localStorage.getItem("user");
-    console.log(user);
     const token = localStorage.getItem("token");
     if(!user || user == 'undefined' || !token) {
         return (

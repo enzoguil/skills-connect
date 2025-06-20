@@ -16,9 +16,7 @@ const Article = () => {
         
             try {
                 setIsLoading(true);
-                console.log(id);
                 const data = await getArticle(id);
-                console.log(data);
                 setArticle(data.article);
                 setComments(data.comments || []);
             } catch (error) {
@@ -29,7 +27,6 @@ const Article = () => {
         };
         fetchArticle();
     }, []);
-    console.log(article);
     return (
         <>
             <Helmet>

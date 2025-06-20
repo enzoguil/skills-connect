@@ -1,8 +1,6 @@
 import React from "react";
 
 const AvisList = ({ avis, onClose }) => {
-  // Pour debug, tu peux laisser ce log :
-  console.log("AvisList reçoit :", avis);
 
   return (
     <div className="avis-modal">

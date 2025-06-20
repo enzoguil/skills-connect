@@ -14,7 +14,6 @@ export default function Discover() {
     const loadData = async () => {
       try {
         const data = await fetchProfiles();
-        console.log("Profiles loaded:", data);
         setProfiles(data);
       } finally {
         setLoading(false);

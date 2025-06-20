@@ -215,7 +215,6 @@ export const fetchCommands = async () => {
 
 export const loginUser = async ({ mail, password }) => {
     const body = JSON.stringify({mail, password});
-    console.log(body);
     const response = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: {
@@ -223,7 +222,6 @@ export const loginUser = async ({ mail, password }) => {
         },
         body: body,
     });
-    console.log(response)
     if (!response.ok) {
         throw new Error("Échec de la connexion.");
     }
@@ -238,7 +236,6 @@ export const createUser = async (firstName, lastName, email, password) => {
         email,
         password
     };
-    console.log(body);
     const response = await fetch(`${API_BASE_URL}/users`, {
         method: "POST",
         headers: {

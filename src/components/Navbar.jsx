@@ -34,7 +34,6 @@ const Navbar = () => {
         );
     }
     user = JSON.parse(user);
-    console.log("User:", user);
 
     const handleLogout = () => {
         localStorage.removeItem("token");
