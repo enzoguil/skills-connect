@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AvisList from "AvisList";
+import AvisList from "../components/AvisList";
 import { Link } from "react-router-dom";
 
 function getInitials(name) {
