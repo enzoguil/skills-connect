@@ -27,17 +27,6 @@ export default function BaseProfile({
   const hasAvatar = avatar && avatar.trim() !== "";
   return (
     <>
-    <div>
-      <span
-        style={{ color: "blue", cursor: "pointer" }}
-        onClick={() => setShowAvis(true)}
-      >
-        ? avis
-      </span>
-      {showAvis && (
-        <AvisList avis={avis} onClose={() => setShowAvis(false)} />
-      )}
-    </div>
     <div className="profil-card shadow-lg me-5">
       <Link to={"mailto:" + email} className="swipe-link d-flex flex-column align-items-center text-decoration-none">
         {hasAvatar ? (
@@ -72,7 +61,10 @@ export default function BaseProfile({
         </div>
       )}
       <div className="swipe-reviews mb-2">
-        <span className="swipe-reviews-link">{reviews} avis &gt;</span>
+        <span className="swipe-reviews-link" onClick={() => setShowAvis(true)}>{reviews} avis &gt;</span>
+        {showAvis && (
+          <AvisList avis={avis} onClose={() => setShowAvis(false)} />
+        )}
       </div>
     </div>
     </>
