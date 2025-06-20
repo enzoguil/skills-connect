@@ -253,3 +253,45 @@ export const createUser = async (firstName, lastName, email, password) => {
 
     return await response.json();
 }
+
+export const addCategoryToUser = async (userId, category) => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/users/${userId}/skills/${category}`, {
+            method: 'POST',
+            headers: {
+                Authorization : `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erreur API: ${response.statusText}`);
+        }
+
+        return response.json();
+    } catch (error) {
+        console.error(`Erreur lors de l'ajout de la catégorie ${category} à l'utilisateur ${userId} : `, error);
+        throw error;
+    }
+}
+
+export const removeCategoryFromUser = async (userId, category) => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/users/${userId}/skills/${categoryId}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization : `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erreur API: ${response.statusText}`);
+        }
+
+        return response.json();
+    } catch (error) {
+        console.error(`Erreur lors de la suppression de la catégorie ${categoryId} de l'utilisateur ${userId} : `, error);
+        throw error;
+    }
+}

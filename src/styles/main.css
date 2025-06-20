@@ -11978,13 +11978,11 @@ body, header, footer {
   line-height: 1.5;
 }
 body h2, body .h2, header h2, header .h2, footer h2, footer .h2 {
-  font-size: 3rem;
   font-weight: 600;
 }
 
 h1, .h1 {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
+  font-weight: 800;
 }
 
 .red-text {

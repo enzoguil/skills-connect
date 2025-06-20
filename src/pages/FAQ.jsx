@@ -58,9 +58,9 @@ const FAQ = () => {
 
 	return (
 		<div className="container py-5">
-			<h2 className="fw-bold mb-4 text-primary-dark">
+			<h1 className="fw-bold mb-4 text-primary-dark">
 				Vous avez des questions ? Nous avons les réponses !
-			</h2>
+			</h1>
             <hr className="border-2 border-primary-dark mb-5" />
 			<div className="flex-1">
 				{faqData.map((item, idx) => (

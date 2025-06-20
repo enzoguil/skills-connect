@@ -34,7 +34,7 @@ const SignUp = () => {
                 localStorage.setItem("token", response.token)
                 localStorage.setItem("user", JSON.stringify(response.user));
                 console.log(response.user);
-                window.location.href = "/compte/"+response.user.id;
+                window.location.href = "./#/compte/"+response.user.id;
             }
         } catch (error) {
             setError("Identifiants incorrects.");
