@@ -1,17 +1,26 @@
 import React from "react";
 
-const AvisList = ({ avis, onClose }) => (
-  <div className="avis-modal">
-    <div className="avis-modal-content">
-      <h3>Liste des avis</h3>
-      <ul>
-        {avis.array.forEach(element => {
-            <li key={element.user}>{element.avis}</li>
-        })}
-      </ul>
-      <button onClick={onClose}>Fermer</button>
+const AvisList = ({ avis, onClose }) => {
+  // Pour debug, tu peux laisser ce log :
+  console.log("AvisList reçoit :", avis);
+
+  return (
+    <div className="avis-modal">
+      <div className="avis-modal-content">
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          {avis && avis.length > 0 ? (
+            avis.map((a, i) => (
+              <li key={i}>
+                <strong>{a.lastName} {a.firstName} :</strong> {a.comment}
+              </li>
+            ))
+          ) : (
+            <li>Aucun avis pour ce profil.</li>
+          )}
+        </ul>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default AvisList;

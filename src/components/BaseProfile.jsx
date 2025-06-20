@@ -17,12 +17,8 @@ export default function BaseProfile({
   tags = ["Marketing", "SEO / SEA", "Anglais", "Rédaction"],
   rating = 5,
   reviews = 11,
+  avis = [],
 }) {
-  const avis = [
-    {user: "NOM1 Prénom1", avis: "Avis 1 !"},
-    {user: "NOM2 Prénom2", avis: "Avis 2 !"},
-    {user: "NOM3 Prénom3", avis: "Avis 3 !"},
-  ];
   const [showAvis, setShowAvis] = useState(false);
   const hasAvatar = avatar && avatar.trim() !== "";
   return (

@@ -14,6 +14,7 @@ export default function Discover() {
     const loadData = async () => {
       try {
         const data = await fetchProfiles();
+        console.log("Profiles loaded:", data);
         setProfiles(data);
       } finally {
         setLoading(false);
@@ -141,6 +142,7 @@ export default function Discover() {
               email={profile.email}
               rating={profile.note}
               reviews={profile.nb_review}
+              avis={profile.review}
             />
           </div>
         ))}

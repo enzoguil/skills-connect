@@ -36,9 +36,13 @@ const Blog = () => {
                 Découvrez tous nos conseils ici !
             </h2>
             <div className="row g-5">
-                <ArticlePreview title="Pourquoi rejoindre MyDigitalSchool Vannes ?" image_url="assets/photo mydi vannes.png" />
-                <ArticlePreview title="Pourquoi rejoindre MyDigitalSchool Vannes ?" image_url="assets/photo mydi vannes.png" />
-                <ArticlePreview title="Pourquoi rejoindre MyDigitalSchool Vannes ?" image_url="assets/photo mydi vannes.png" />
+                {isLoading ? (
+                    <div className="text-center">Chargement des articles...</div>
+                ) : (
+                    articles.map((article) => (
+                        <ArticlePreview title={article.title} image_url="assets/photo mydi vannes.png" link={`/blog/${article.id}`}/>
+                    ))
+                )}
             </div>
         </div>
     );
