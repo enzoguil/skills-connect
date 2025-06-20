@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import AvisList from "./components/AvisList";
 import { Link } from "react-router-dom";
 
 function getInitials(name) {
@@ -17,8 +18,26 @@ export default function BaseProfile({
   rating = 5,
   reviews = 11,
 }) {
+  const avis = [
+    "Super site !",
+    "Très utile pour les étudiants.",
+    "Interface agréable."
+  ];
+  const [showAvis, setShowAvis] = useState(false);
   const hasAvatar = avatar && avatar.trim() !== "";
   return (
+    <>
+    <div>
+      <span
+        style={{ color: "blue", cursor: "pointer" }}
+        onClick={() => setShowAvis(true)}
+      >
+        ? avis
+      </span>
+      {showAvis && (
+        <AvisList avis={avis} onClose={() => setShowAvis(false)} />
+      )}
+    </div>
     <div className="profil-card shadow-lg me-5">
       <Link to={"mailto:" + email} className="swipe-link d-flex flex-column align-items-center text-decoration-none">
         {hasAvatar ? (
@@ -56,5 +75,6 @@ export default function BaseProfile({
         <span className="swipe-reviews-link">{reviews} avis &gt;</span>
       </div>
     </div>
+    </>
   );
 }
