@@ -277,7 +277,7 @@ export const addCategoryToUser = async (userId, category) => {
 
 export const removeCategoryFromUser = async (userId, category) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/users/${userId}/skills/${categoryId}`, {
+        const response = await fetch(`${API_BASE_URL}/users/${userId}/skills/${category}`, {
             method: 'DELETE',
             headers: {
                 Authorization : `Bearer ${token}`,
@@ -291,7 +291,7 @@ export const removeCategoryFromUser = async (userId, category) => {
 
         return response.json();
     } catch (error) {
-        console.error(`Erreur lors de la suppression de la catégorie ${categoryId} de l'utilisateur ${userId} : `, error);
+        console.error(`Erreur lors de la suppression de la catégorie ${category} de l'utilisateur ${userId} : `, error);
         throw error;
     }
 }

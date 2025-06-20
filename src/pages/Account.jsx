@@ -7,6 +7,7 @@ const Account = () => {
     const [user, setUser] = useState({});
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [tags, setTags] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
@@ -18,6 +19,7 @@ const Account = () => {
         try {
             setIsLoading(true);
             const data = await fetchCategories(id);
+            console.log("Categories:", data);
             setCategories(data);
         } catch (error) {
             console.error('Failed to fetch categories:', error);
@@ -31,18 +33,14 @@ const Account = () => {
             setIsLoading(true);
             const data = await getUser(id);
             setUser(data);
+            setTags(data.skills || []);
+            console.log("User fetched:", data);
         } catch (error) {
             console.error('Failed to fetch user:', error);
         } finally {
             setIsLoading(false);
         }
     };
-
-    // tags = tableau de chaînes
-    const [tags, setTags] = useState([]);
-    useEffect(() => {
-        setTags(Array.isArray(user.tags) ? user.tags : []);
-    }, [user]);
 
     const [selectedTag, setSelectedTag] = useState("");
 
@@ -71,6 +69,8 @@ const Account = () => {
                 });
         }
     };
+
+    console.log("Tags:", tags);
 
     // On filtre les catégories dont le nom n'est pas déjà dans tags
     const availableCategories = categories.filter(cat => !tags.includes(cat.name));
