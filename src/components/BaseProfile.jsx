@@ -19,9 +19,9 @@ export default function BaseProfile({
   reviews = 11,
 }) {
   const avis = [
-    "Super site !",
-    "Très utile pour les étudiants.",
-    "Interface agréable."
+    {user: "NOM1 Prénom1", avis: "Avis 1 !"},
+    {user: "NOM2 Prénom2", avis: "Avis 2 !"},
+    {user: "NOM3 Prénom3", avis: "Avis 3 !"},
   ];
   const [showAvis, setShowAvis] = useState(false);
   const hasAvatar = avatar && avatar.trim() !== "";
@@ -61,7 +61,7 @@ export default function BaseProfile({
         </div>
       )}
       <div className="swipe-reviews mb-2">
-        <span className="swipe-reviews-link" onClick={() => setShowAvis(true)}>{reviews} avis &gt;</span>
+        <span className="swipe-reviews-link" onClick={() => setShowAvis(!showAvis)}>{reviews} avis &gt;</span>
         {showAvis && (
           <AvisList avis={avis} onClose={() => setShowAvis(false)} />
         )}
