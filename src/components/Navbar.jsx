@@ -24,7 +24,7 @@ const Navbar = () => {
         return (
             <nav className="navbar border-bottom border-gray" style={{ background: "#f8f9fa" }}>
                 <div className="container d-flex align-items-center justify-content-between" style={{ minHeight: 80 }}>
-                    <a className="navbar-brand"><img src={logoPrincipal} style={{ width: "120px" }} alt="logo" /></a>
+                    <Link to="/" className="navbar-brand"><img src={logoPrincipal} style={{ width: "120px" }} alt="logo" /></Link>
                     <div>
                         <Link className="btn btn-light me-2" to="/login">Se connecter</Link>
                         <Link className="btn btn-danger text-white" to="/sign-up">S'inscrire</Link>

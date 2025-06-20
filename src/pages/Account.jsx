@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { addCategoryToUser, deleteCategory, fetchCategories, getUser, removeCategoryFromUser } from "../services/api";
+import { addCategoryToUser, fetchCategories, getUser, removeCategoryFromUser } from "../services/api";
 import { useParams } from "react-router-dom";
 
 const Account = () => {
